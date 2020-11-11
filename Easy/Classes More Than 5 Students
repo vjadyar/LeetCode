@@ -1,0 +1,10 @@
+SELECT CLASS
+FROM COURSES
+GROUP BY CLASS
+HAVING COUNT(DISTINCT STUDENT) >= 5;
+
+
+/*
+Runtime: 441 ms, faster than 87.80% of Oracle online submissions for Classes More Than 5 Students.
+Memory Usage: 0B, less than 100.00% of Oracle online submissions for Classes More Than 5 Students.
+*/
