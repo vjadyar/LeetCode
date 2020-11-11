@@ -1,0 +1,8 @@
+SELECT MAX(SALARY) as SecondHighestSalary 
+FROM EMPLOYEE WHERE SALARY < (SELECT MAX(SALARY) FROM EMPLOYEE);
+
+
+/*
+Runtime: 490 ms, faster than 41.57% of Oracle online submissions for Second Highest Salary.
+Memory Usage: 0B, less than 100.00% of Oracle online submissions for Second Highest Salary.
+*/
