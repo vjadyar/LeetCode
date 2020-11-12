@@ -1,0 +1,8 @@
+ select ID
+ from Weather outer where Temperature > 
+ (select temperature from Weather inner where (inner.RecordDate+1) = outer.RecordDate);
+ 
+ /*
+Runtime: 775 ms, faster than 31.03% of Oracle online submissions for Rising Temperature.
+Memory Usage: 0B, less than 100.00% of Oracle online submissions for Rising Temperature.
+*/
