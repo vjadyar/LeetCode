@@ -1,0 +1,10 @@
+SELECT NAME AS CUSTOMERS
+FROM CUSTOMERS
+WHERE ID NOT IN
+(SELECT CUSTOMERID FROM ORDERS);
+
+
+/*
+Runtime: 850 ms, faster than 33.52% of Oracle online submissions for Customers Who Never Order.
+Memory Usage: 0B, less than 100.00% of Oracle online submissions for Customers Who Never Order.
+*/
