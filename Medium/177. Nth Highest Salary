@@ -1,0 +1,20 @@
+CREATE FUNCTION GETNTHHIGHESTSALARY (N IN NUMBER)
+RETURN NUMBER 
+AS
+RESULT NUMBER;
+BEGIN
+    SELECT DISTINCT SALARY INTO RESULT
+    FROM
+    (
+    SELECT SALARY, DENSE_RANK() OVER(ORDER BY SALARY DESC) RNK
+    FROM EMPLOYEE
+    ) WHERE RNK = N;
+    
+    RETURN RESULT;
+END;
+
+
+/*
+Runtime: 632 ms, faster than 58.05% of Oracle online submissions for Nth Highest Salary.
+Memory Usage: 0B, less than 100.00% of Oracle online submissions for Nth Highest Salary.
+*/
