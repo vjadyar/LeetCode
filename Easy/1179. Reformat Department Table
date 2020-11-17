@@ -1,0 +1,36 @@
+SELECT ID,
+SUM(Jan_Revenue) AS Jan_Revenue,
+SUM(Feb_Revenue) AS Feb_Revenue,
+SUM(Mar_Revenue) AS Mar_Revenue,
+SUM(Apr_Revenue) AS Apr_Revenue,
+SUM(May_Revenue) AS May_Revenue,
+SUM(Jun_Revenue) AS Jun_Revenue,
+SUM(Jul_Revenue) AS Jul_Revenue,
+SUM(Aug_Revenue) AS Aug_Revenue,
+SUM(Sep_Revenue) AS Sep_Revenue,
+SUM(Oct_Revenue) AS Oct_Revenue,
+SUM(Nov_Revenue) AS Nov_Revenue,
+SUM(Dec_Revenue) AS Dec_Revenue
+FROM
+(
+SELECT ID,
+CASE WHEN MONTH = 'Jan' THEN REVENUE END AS Jan_Revenue,
+CASE WHEN MONTH = 'Feb' THEN REVENUE END AS Feb_Revenue,
+CASE WHEN MONTH = 'Mar' THEN REVENUE END AS Mar_Revenue,
+CASE WHEN MONTH = 'Apr' THEN REVENUE END AS Apr_Revenue,
+CASE WHEN MONTH = 'May' THEN REVENUE END AS May_Revenue,
+CASE WHEN MONTH = 'Jun' THEN REVENUE END AS Jun_Revenue,
+CASE WHEN MONTH = 'Jul' THEN REVENUE END AS Jul_Revenue,
+CASE WHEN MONTH = 'Aug' THEN REVENUE END AS Aug_Revenue,
+CASE WHEN MONTH = 'Sep' THEN REVENUE END AS Sep_Revenue,
+CASE WHEN MONTH = 'Oct' THEN REVENUE END AS Oct_Revenue,
+CASE WHEN MONTH = 'Nov' THEN REVENUE END AS Nov_Revenue,
+CASE WHEN MONTH = 'Dec' THEN REVENUE END AS Dec_Revenue
+from DEPARTMENT
+)
+GROUP BY ID;
+
+/*
+Runtime: 812 ms, faster than 21.08% of Oracle online submissions for Reformat Department Table.
+Memory Usage: 0B, less than 100.00% of Oracle online submissions for Reformat Department Table.
+*/
