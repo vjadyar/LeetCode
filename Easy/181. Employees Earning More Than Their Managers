@@ -1,0 +1,8 @@
+SELECT E1.NAME AS EMPLOYEE
+FROM EMPLOYEE E1 JOIN EMPLOYEE E2 ON E1.MANAGERID = E2.ID
+WHERE E1.SALARY > E2.SALARY;
+
+/*
+Runtime: 553 ms, faster than 76.51% of Oracle online submissions for Employees Earning More Than Their Managers.
+Memory Usage: 0B, less than 100.00% of Oracle online submissions for Employees Earning More Than Their Managers.
+*/
