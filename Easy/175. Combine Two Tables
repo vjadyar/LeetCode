@@ -1,0 +1,8 @@
+SELECT FIRSTNAME, LASTNAME, CITY, STATE
+FROM PERSON P LEFT JOIN ADDRESS A ON P.PERSONID = A.PERSONID;
+
+
+/*
+Runtime: 540 ms, faster than 93.91% of Oracle online submissions for Combine Two Tables.
+Memory Usage: 0B, less than 100.00% of Oracle online submissions for Combine Two Tables.
+*/
