@@ -1,0 +1,12 @@
+/* Write your PL/SQL query statement below */
+SELECT DISTINCT L1.NUM AS ConsecutiveNums
+FROM LOGS L1 LEFT JOIN LOGS L2 ON L1.ID = L2.ID+1
+LEFT JOIN LOGS L3 ON L1.ID = L3.ID+2
+WHERE L1.NUM = L2.NUM AND L1.NUM = L3.NUM;
+
+/*
+Runtime: 735 ms, faster than 64.11% of Oracle online submissions for Consecutive Numbers.
+Memory Usage: 0B, less than 100.00% of Oracle online submissions for Consecutive Numbers.
+*/
+
+
