@@ -1,0 +1,10 @@
+SELECT ID, MOVIE, DESCRIPTION, RATING
+FROM CINEMA
+WHERE DESCRIPTION != 'boring' AND MOD(ID,2) = 1
+ORDER BY RATING DESC;
+
+
+/*
+Runtime: 448 ms, faster than 65.59% of Oracle online submissions for Not Boring Movies.
+Memory Usage: 0B, less than 100.00% of Oracle online submissions for Not Boring Movies.
+*/
