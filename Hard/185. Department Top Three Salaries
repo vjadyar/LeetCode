@@ -1,0 +1,13 @@
+/* Write your PL/SQL query statement below */
+
+SELECT DEPARTMENT.NAME AS DEPARTMENT, EMP.NAME EMPLOYEE, SALARY
+FROM
+(SELECT DEPARTMENTID, NAME, SALARY, DENSE_RANK() OVER(PARTITION BY DEPARTMENTID ORDER BY SALARY DESC) RNK
+FROM EMPLOYEE
+) EMP JOIN DEPARTMENT ON EMP.DEPARTMENTID = DEPARTMENT.ID
+WHERE RNK <= 3;
+
+/*
+Runtime: 1085 ms, faster than 46.74% of Oracle online submissions for Department Top Three Salaries.
+Memory Usage: 0B, less than 100.00% of Oracle online submissions for Department Top Three Salaries.
+*/
